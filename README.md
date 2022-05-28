@@ -6,9 +6,9 @@ A brainf**k interpreter written in Go.
 |----------------	|--------	|
 | Lexer          	| ✅      	|
 | Compiler       	| ✅      	|
-| Interpreter    	| 🔲      	|
+| Interpreter    	| ✅      	|
 | Code Examples  	| 🔲      	|
-| Configurations 	| 🔲      	|
+| Configurations 	| ✅      	|
 
 ## Implementation Details.
 According to [The epistle to the Implementors](http://brainfuck.org/epistle.html), there are some specific topics to consider before doing an implementation of the language. In our implementation we follow some of them. Here is the list:
@@ -17,17 +17,20 @@ According to [The epistle to the Implementors](http://brainfuck.org/epistle.html
 - When found an EOF, it wont affect the value of a cell. It is like a no-op instruction.
 - The supported character set of operators is { '+', ',', '-', '.', '<', '>', '[', ']' }. Any other character is a comment.
 - The input must be a valid utf-8 encoded file.
-- The default size of the array is 32767 cells.
+- The default size of the slice is 32767 cells.
 - The pointer starts at position 0.
 - Output is not necessarily done with a monospace font. It will depend on the local context.
 - I/O operations are done during execution, so all programs are interactive.
 - The input operation has a default configurable prompt.
 - The compiler matches [] before execution, and it will report an error with unbalanced [].
-- The interpreter will have some configurable features like: prompt, wrapping on/off, cell and array size.
+- The interpreter have some configurable features like: prompt, and slice size.
 - Peace be with us.
 
 
-The interpreter is intended to be used as a library to embed in your Go projects. Nobody knows when you need a concurrent safe brainf**k interpreter at hand. 
+The interpreter is intended to be used as a library to embed in your Go projects. It exports two configurable global parameters and the function Run(code string). The interpreter is thread safe, and do not produce data races. 
+
+
+Nobody knows when is needed a concurrent safe brainf**k interpreter.
 
 
 Contributions are welcome!
