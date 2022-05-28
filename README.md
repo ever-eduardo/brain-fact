@@ -24,7 +24,7 @@ According to [The epistle to the Implementors](http://brainfuck.org/epistle.html
 - The input operation has a default configurable prompt.
 - The compiler matches [] before execution, and it will report an error with unbalanced [].
 - The interpreter will have some configurable features like: prompt, wrapping on/off, cell and array size.
-- Peace be with us. ☮
+- Peace be with us.
 
 
 The interpreter is intended to be used as a library to embed in your Go projects. Nobody knows when you need a concurrent safe brainf**k interpreter at hand. 
@@ -33,7 +33,7 @@ The interpreter is intended to be used as a library to embed in your Go projects
 Contributions are welcome!
 
 
-Happy brain-fact coding! 🧠
+Happy brain-fact coding! ❤️
 
 
 
