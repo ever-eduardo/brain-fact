@@ -68,6 +68,7 @@ func (c *compiler) run() {
 	}
 }
 
+// This function does some checks after compiling the ] operator.
 func (c *compiler) endLoop(op byte) generator {
 	if op == opEND {
 		c.bytecode = append(c.bytecode, op)
