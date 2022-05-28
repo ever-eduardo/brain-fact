@@ -10,6 +10,9 @@ A [brainf**k](http://brainfuck.org/) interpreter written in [Go](https://go.dev/
 | Interpreter    	| ✅      	|
 | Code Examples  	| 🔲      	|
 | Configurations 	| ✅      	|
+| Cmd tool       	| 🔲      	|
+| Documentation  	| 🔲      	|
+| Release       	| 🔲      	|
 
 
 ## Implementation Details.
