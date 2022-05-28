@@ -25,6 +25,7 @@ type lexer struct {
 	messenger chan rune       // communication channel.
 }
 
+// creates a new lexer.
 func newLexer(code string, messenger chan rune) *lexer {
 	return &lexer{
 		reader:    strings.NewReader(code),
@@ -88,6 +89,7 @@ func (c *compiler) endLoop(op byte) generator {
 	}
 }
 
+// creates a new compiler.
 func newCompiler(code string) *compiler {
 	c := &compiler{
 		bytecode:  make([]byte, 0),
