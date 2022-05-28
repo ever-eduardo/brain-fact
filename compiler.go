@@ -68,6 +68,25 @@ func (c *compiler) run() {
 	}
 }
 
+func (c *compiler) endLoop(op byte) generator {
+	if op == opEND {
+		c.bytecode = append(c.bytecode, op)
+		c.offset++
+		c.err = fmt.Errorf("found EOF but at least one [ has not its matching ]")
+		return nil
+	} else {
+		c.bytecode = append(c.bytecode, op)
+		c.bytecode = append(c.bytecode, 0)
+		c.bytecode = append(c.bytecode, 0)
+		c.offset += 3
+		address := c.stack[len(c.stack)-1]
+		binary.BigEndian.PutUint16(c.bytecode[c.offset-1:], uint16(address))
+		binary.BigEndian.PutUint16(c.bytecode[address+1:], uint16(c.offset+1))
+		c.stack = c.stack[:len(c.stack)-1]
+		return generators[instr]
+	}
+}
+
 func newCompiler(code string) *compiler {
 	c := &compiler{
 		bytecode:  make([]byte, 0),
@@ -130,22 +149,7 @@ func init() {
 					}
 				}
 			}
-			if op == opEND {
-				c.bytecode = append(c.bytecode, op)
-				c.offset++
-				c.err = fmt.Errorf("found EOF but at least one [ has not its matching ]")
-				return nil
-			} else {
-				c.bytecode = append(c.bytecode, op)
-				c.bytecode = append(c.bytecode, 0)
-				c.bytecode = append(c.bytecode, 0)
-				c.offset += 3
-				address := c.stack[len(c.stack)-1]
-				binary.BigEndian.PutUint16(c.bytecode[c.offset-1:], uint16(address))
-				binary.BigEndian.PutUint16(c.bytecode[address+1:], uint16(c.offset+1))
-				c.stack = c.stack[:len(c.stack)-1]
-				return generators[instr]
-			}
+			return c.endLoop(op)
 		},
 	}
 }
