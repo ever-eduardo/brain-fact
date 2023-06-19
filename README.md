@@ -22,7 +22,7 @@ go build
 | Interpreter    	| ✅      	|
 | Code Examples  	| 🔲      	|
 | Configurations 	| ✅      	|
-| CLI tool       	| 🔲      	|
+| CLI tool       	| ✅      	|
 | Documentation  	| ✅     	|
 | Release       	| 🔲      	|
 
