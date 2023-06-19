@@ -11,7 +11,7 @@ A [brainf**k](http://brainfuck.org/) interpreter written in [Go](https://go.dev/
 | Code Examples  	| 🔲      	|
 | Configurations 	| ✅      	|
 | Cmd tool       	| 🔲      	|
-| Documentation  	| 🔲      	|
+| Documentation  	| ✅     	|
 | Release       	| 🔲      	|
 
 
