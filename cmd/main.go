@@ -1,6 +1,6 @@
-package cmd
+package main
 
-import brainfact "github.com/everness-dev/brain-fact"
+import brainfact "github.com/ever-eduardo/brain-fact"
 
 const BFFileExtension string = ".bf"
 
