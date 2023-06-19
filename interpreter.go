@@ -9,7 +9,7 @@ import (
 	"strconv"
 )
 
-// Global variables configurables.
+// Globalconfigurable variables.
 var (
 	TapeSize uint = math.MaxInt16
 	Prompt        = "brain-fact > "
@@ -23,7 +23,7 @@ type interpreter struct {
 	scanner  *bufio.Scanner
 }
 
-// Run creates a new Interpreter and runs the code passed as argument. It returns nil if no error happened.
+// Run creates a new interpreter and runs the code passed as argument. It returns nil if no error happened.
 func Run(code string) error {
 	i := &interpreter{
 		code:     code,
