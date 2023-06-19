@@ -26,7 +26,7 @@ go build
 | Configurations 	| ✅      	|
 | CLI tool       	| ✅      	|
 | Documentation  	| ✅     	|
-| Release       	| 🔲      	|
+| Release       	| ✅      	|
 
 
 ## Implementation Details.
