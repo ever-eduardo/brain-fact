@@ -27,7 +27,7 @@ func main() {
 				if err := brainfact.Run(code); err != nil {
 					fmt.Printf("\n\n\n Error: %s\n\n\n", err)
 				} else {
-					fmt.Printf("\n\n\n   %s\n   %s\n\n\n", Welcome, Success)
+					fmt.Printf("\n\n   %s\n   %s\n\n\n", Welcome, Success)
 				}
 			} else if err != nil {
 				fmt.Printf("\n\nError reading file '%v'\n%v\n\n\n", os.Args[scriptIndex], err)
