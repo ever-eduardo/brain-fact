@@ -1,9 +1,12 @@
 # brain-fact
 A [brainf**k](http://brainfuck.org/) interpreter written in [Go](https://go.dev/).
 
-Import the library in your project with `go get github.com/ever-eduardo/brain-fact`
 
-If you want to build the cli:
+Import the library in your project with 
+`go get github.com/ever-eduardo/brain-fact`
+
+
+If you want to build the cli and run file scripts then:
 ```
 cd brainfack
 go build
@@ -19,7 +22,7 @@ go build
 | Interpreter    	| ✅      	|
 | Code Examples  	| 🔲      	|
 | Configurations 	| ✅      	|
-| Cmd tool       	| 🔲      	|
+| CLI tool       	| 🔲      	|
 | Documentation  	| ✅     	|
 | Release       	| 🔲      	|
 
