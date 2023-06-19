@@ -11,8 +11,9 @@ import (
 
 // Globalconfigurable variables.
 var (
-	TapeSize uint = math.MaxInt16
-	Prompt        = "brain-fact > "
+	TapeSize    uint = math.MaxInt16
+	Prompt           = "brain-fact > "
+	innerPrompt      = "(BF Input) [Enter a byte number or 0 to exit]: "
 )
 
 // interpreter compiles and executes brainfuck code.
@@ -80,7 +81,7 @@ func (i *interpreter) run() error {
 				pc += 3
 			}
 		case opComma:
-			fmt.Print(Prompt)
+			fmt.Printf("\n%s\n", innerPrompt)
 		scanLoop:
 			for i.scanner.Scan() {
 				if result, err := strconv.ParseUint(i.scanner.Text(), 0, 64); err == nil {
